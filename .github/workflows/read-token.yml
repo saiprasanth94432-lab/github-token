@@ -1,0 +1,21 @@
+name: Tokens Exists test
+on: push
+
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get checkout code
+              uses: actions/checkout@v4
+
+            - name: Check if token exists
+              run: |
+               if [-z "$GITHUB_TOKEN"]; then
+                 echo "Token not available"
+                else
+                 echo " Token is available"
+                fi
+            - name: Try to print token
+              run: echo "${{secrets.GITHUB_TOKEN}}"
+              
