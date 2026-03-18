@@ -16,7 +16,7 @@ jobs:
                 aws-region: ap-south-1
 
             - name: Test AWS
-              run: aws sts-get-caller-identity
+              run: aws sts get-caller-identity
                  
 
 
